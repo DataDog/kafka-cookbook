@@ -4,8 +4,8 @@
 #
 
 node.default[:kafka][:scala_version] ||= '2.8.0'
-node.default[:kafka][:checksum]      ||= 'ecadd6cf9f59e22444af5888c8b9595c5652ffab597db038418e85dfa834062e'
-node.default[:kafka][:md5_checksum]  ||= '593e0cf966e6b8cd1bbff5bff713c4b3'
+node.default[:kafka][:checksum]      ||= '6323538013535d3fe8c079dec0a428a93c8a3e8a667482d0b6daca69d3a00700'
+node.default[:kafka][:md5_checksum]  ||= '3724dc1f4eb69723bf716ad3f0c8fa49'
 
 kafka_tar_gz      = %(#{kafka_base}.tgz)
 local_file_path   = ::File.join(Chef::Config[:file_cache_path], kafka_tar_gz)
