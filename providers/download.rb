@@ -3,7 +3,7 @@
 # Provider:: download
 #
 
-use_inline_resources
+use_inline_resources if defined?(use_inline_resources)
 
 action :create do
   local_file_path = new_resource.name
