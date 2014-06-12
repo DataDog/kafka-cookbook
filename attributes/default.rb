@@ -484,3 +484,7 @@ default[:kafka][:zookeeper][:sync_time_ms] = nil
 # This is a way to setup multiple Kafka clusters or other applications on the
 # same zookeeper cluster.
 default[:kafka][:zookeeper][:path] = nil
+
+# Upstart only: set the file limits of the kafka process
+default[:kafka][:file_limit][:soft_limit] = 60000
+default[:kafka][:file_limit][:hard_limit] = 60000

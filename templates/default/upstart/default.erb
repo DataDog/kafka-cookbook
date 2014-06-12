@@ -10,6 +10,8 @@ kill timeout 10
 
 setuid <%= @user %>
 
+limit nofile <%= node[:kafka][:file_limit][:soft_limit] %> <%= node[:kafka][:file_limit][:hard_limit] %> 
+
 script
   [ -f /etc/default/<%= @daemon_name %> ] && . /etc/default/<%= @daemon_name %>
   exec $KAFKA_RUN $KAFKA_ARGS $KAFKA_CONFIG
