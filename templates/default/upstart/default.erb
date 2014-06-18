@@ -8,6 +8,9 @@ stop on runlevel [016]
 kill signal INT
 kill timeout 10
 
+respawn
+respawn limit 10 5
+
 setuid <%= @user %>
 
 limit nofile <%= node[:kafka][:file_limit][:soft_limit] %> <%= node[:kafka][:file_limit][:hard_limit] %> 
