@@ -3,12 +3,15 @@
 # Recipe:: _setup
 #
 
-group node[:kafka][:group]
+group node[:kafka][:group] do
+  system true
+end
 
 user node[:kafka][:user] do
   gid node[:kafka][:group]
   shell '/sbin/nologin'
   supports(manage_home: false)
+  system true
 end
 
 [
