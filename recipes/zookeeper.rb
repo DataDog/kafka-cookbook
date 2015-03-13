@@ -5,6 +5,12 @@
 
 include_recipe 'kafka'
 
+directory node[:zookeeper][:data_dir] do
+  owner node[:kafka][:user]
+  group node[:kafka][:group]
+  mode '755'
+end
+
 template ::File.join(node[:kafka][:config_dir], 'zookeeper.properties') do
   source 'zookeeper.properties.erb'
   owner node[:kafka][:user]
