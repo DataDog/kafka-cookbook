@@ -13,7 +13,9 @@ respawn limit 10 5
 
 setuid <%= @user %>
 
-limit nofile <%= node[:kafka][:file_limit][:soft_limit] %> <%= node[:kafka][:file_limit][:hard_limit] %> 
+limit nofile <%= node[:kafka][:file_limit][:soft_limit] %> <%= node[:kafka][:file_limit][:hard_limit] %>
+
+console none
 
 script
   [ -f /etc/default/<%= @daemon_name %> ] && . /etc/default/<%= @daemon_name %>
